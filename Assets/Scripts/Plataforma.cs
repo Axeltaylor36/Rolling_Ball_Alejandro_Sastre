@@ -5,6 +5,8 @@ using UnityEngine;
 public class Plataforma : MonoBehaviour
 {
     [SerializeField] private float temp;
+    [SerializeField] private Vector3 mov;
+    private float contrario;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class Plataforma : MonoBehaviour
 
     void movimiento()
     {
-       transform.Translate (new Vector3(10, 0, 0) * 2 * Time.deltaTime);
+       transform.Translate (mov * Time.deltaTime);
     }
 
     void timer() 
@@ -28,6 +30,7 @@ public class Plataforma : MonoBehaviour
         if (temp >= 2)
         {
           temp += 1 * Time.deltaTime;
+          
         }
     }
 }
