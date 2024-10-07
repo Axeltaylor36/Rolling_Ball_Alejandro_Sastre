@@ -4,33 +4,41 @@ using UnityEngine;
 
 public class Plataforma : MonoBehaviour
 {
-    [SerializeField] private float temp;
-    [SerializeField] private Vector3 mov;
-    private float contrario;
+    [SerializeField] private float velocidad;
+    [SerializeField] private Vector3 direccion = new Vector3 (0, 0, 0);
+    [SerializeField] private float CambioDireccion;
+    private float timer;
+
+    private bool cambiarDireccion;
     // Start is called before the first frame update
+    
     void Start()
     {
-        
+        direccion = direccion.normalized;
+        timer = CambioDireccion;
+        cambiarDireccion = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        movimiento();
-        timer();
-    }
-
-    void movimiento()
-    {
-       transform.Translate (mov * Time.deltaTime);
-    }
-
-    void timer() 
-    {
-        if (temp >= 2)
+       timer = timer - Time.deltaTime;
+        if (timer <= 0)
         {
-          temp += 1 * Time.deltaTime;
-          
+            if (cambiarDireccion)
+            {
+                cambiarDireccion = false;
+            }
+
+            else
+            {
+                cambiarDireccion = true;
+            }
+            direccion = direccion * -1;
+            timer = CambioDireccion;
         }
+
+        transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
     }
+
 }
