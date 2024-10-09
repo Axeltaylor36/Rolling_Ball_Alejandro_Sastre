@@ -4,50 +4,43 @@ using UnityEngine;
 
 public class Coleccionable : MonoBehaviour
 {
-    [SerializeField] private float velocidad;
-    [SerializeField] private Vector3 sentido = new Vector3(0, 0, 0);
-    [SerializeField] private float CambioDireccion;
-    private float timer;
-
-    private bool cambiarDireccion;
-
-    [SerializeField] private Vector3 direccion;
-    //[SerializeField] float direccion;
-    // Start is called before the first frame update
+    [SerializeField] float valorTiempo;
+    float tiempo;
+    [SerializeField] new Vector3 moverse;
+    [SerializeField] new Vector3 rotarse;
+    [SerializeField] int velocidad;
     void Start()
     {
-        sentido = sentido.normalized;
-        timer = CambioDireccion;
-        cambiarDireccion = false;
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        Temp();
-        transform.Rotate(direccion * Time.deltaTime, Space.World);
+       Mover();
+       Rotar();
+       FinTiempo();
     }
 
-    void Temp()
+     void Mover()
     {
-        timer = timer - Time.deltaTime;
-        if (timer <= 0)
-        {
-            if (cambiarDireccion)
-            {
-                cambiarDireccion = false;
-            }
+        transform.Translate(moverse * velocidad * Time.deltaTime, Space.World);
+    }
+    void Rotar()
+    {
+        transform.Rotate (rotarse * 90 * Time.deltaTime, Space.World);
+    }
 
-            else
-            {
-                cambiarDireccion = true;
-            }
-            sentido = sentido * -1;
-            timer = CambioDireccion;
+    void FinTiempo()
+    {
+        tiempo -= Time.deltaTime;
+        if (tiempo <= 0)
+        {
+            moverse = moverse * -1;
+
+            tiempo = valorTiempo;
         }
 
-        transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
     }
 
-   
 }
