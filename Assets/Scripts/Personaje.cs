@@ -5,7 +5,7 @@ using UnityEngine;
 public class Personaje : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] private float velocidad, velocidadSalto;
+    [SerializeField] private float velocidad, fuerzaSalto;
     Vector3 posInicial;
     [SerializeField] Vector3 moverseW1, moverseS2, moverseA3, moverseD4;
 
@@ -14,12 +14,14 @@ public class Personaje : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         posInicial = transform.position;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Movimiento();
+        salto();
     }
 
     void Movimiento()
@@ -41,5 +43,10 @@ public class Personaje : MonoBehaviour
         {
             transform.Translate(moverseD4.normalized * velocidad * Time.deltaTime);
         }
+    }
+
+    void salto()
+    {
+        if ()
     }
 }
