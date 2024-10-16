@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6939650827012310974}
   - component: {fileID: 2142833443287753524}
   - component: {fileID: 8467779843654726304}
-  - component: {fileID: 4811190584637822996}
+  - component: {fileID: 981529042542249521}
   m_Layer: 0
   m_Name: Coleccionable
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4811190584637822996
+--- !u!114 &981529042542249521
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,9 +115,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5307689902659214116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e6e30aa2bee3c247b4a5bd4b28013e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 06d7af19e18ed3343a503a223f94f122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 8
-  direccion: {x: 1, y: 0, z: 0}
-  CambioDireccion: 2
+  valorTiempo: 0.5
+  moverse: {x: 0, y: 1, z: 0}
+  rotarse: {x: 0, y: 1, z: 0}
+  velocidad: 5

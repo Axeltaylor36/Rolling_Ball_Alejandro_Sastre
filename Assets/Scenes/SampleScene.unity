@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 9849824146e08434aa8d2a4fa6a9f54a, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: c52c5d7968fa6c9499b0b5752f899bfb, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -441,13 +441,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.8220931, y: 0.35098282, z: -0.20640378, w: -0.39795893}
-  m_LocalPosition: {x: 17.8, y: 214.6, z: 127}
+  m_LocalRotation: {x: -0.77478886, y: 0.44340685, z: -0.44708705, w: -0.056619927}
+  m_LocalPosition: {x: -97.2, y: 208.7, z: 123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 53.054, y: -185.73, z: 223.377}
+  m_LocalEulerAnglesHint: {x: 28.961, y: -227.259, z: 226.672}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 0
-  velocidadSalto: 0
+  fuerzaSalto: 0
   moverseW1: {x: 0, y: 0, z: 0}
   moverseS2: {x: 0, y: 0, z: 0}
   moverseA3: {x: 0, y: 0, z: 0}
@@ -814,7 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 20
-  velocidadSalto: 10
+  fuerzaSalto: 12
   moverseW1: {x: 0, y: 0, z: 1}
   moverseS2: {x: 0, y: 0, z: -1}
   moverseA3: {x: -1, y: 0, z: 0}
@@ -975,28 +975,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8996632560115468276}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1838281065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5307689902659214116, guid: d9be0476635f4b049bb7985f799545db,
-    type: 3}
-  m_PrefabInstance: {fileID: 3004554301587328513}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1838281071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838281065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06d7af19e18ed3343a503a223f94f122, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  valorTiempo: 0.5
-  moverse: {x: 0, y: 1, z: 0}
-  rotarse: {x: 0, y: 1, z: 0}
-  velocidad: 5
 --- !u!1001 &3004554301587328513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1078,11 +1056,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5307689902659214116, guid: d9be0476635f4b049bb7985f799545db,
-        type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1838281071}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9be0476635f4b049bb7985f799545db, type: 3}
 --- !u!1001 &8996632560115468276
 PrefabInstance:

@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-    Rigidbody rb;
+    Rigidbody rbd;
     [SerializeField] private float velocidad, fuerzaSalto;
     Vector3 posInicial;
     [SerializeField] Vector3 moverseW1, moverseS2, moverseA3, moverseD4;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rbd = GetComponent<Rigidbody>();
         posInicial = transform.position;
 
     }
@@ -21,7 +22,12 @@ public class Personaje : MonoBehaviour
     void Update()
     {
         Movimiento();
-        salto();
+        
+        if (DetectarSuelo() == true)
+        {
+            salto();
+        }
+            
     }
 
     void Movimiento()
@@ -47,6 +53,14 @@ public class Personaje : MonoBehaviour
 
     void salto()
     {
-        if ()
+        if (Input.GetKeyDown (KeyCode.Space))
+        {
+            rbd.AddForce(Vector3.up * fuerzaSalto , ForceMode.Impulse);
+        }
+    } 
+    bool DetectarSuelo()
+    {
+        bool resultado = Physics.Raycast(transform.position, Vector3.down, 2f);
+        return resultado;
     }
 }
