@@ -32,23 +32,11 @@ public class Personaje : MonoBehaviour
 
     void Movimiento()
     {
+        float movimientoHorizontal = Input.GetAxis("Horizontal");
+        float movimientoVertical = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(moverseW1.normalized * velocidad * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(moverseA3.normalized * velocidad * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(moverseS2.normalized * velocidad * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(moverseD4.normalized * velocidad * Time.deltaTime);
-        }
+        Vector3 movimiento = new Vector3(movimientoHorizontal , 0.0f, movimientoVertical);
+        rbd.AddForce( movimiento * velocidad);
     }
 
     void salto()
@@ -60,7 +48,7 @@ public class Personaje : MonoBehaviour
     } 
     bool DetectarSuelo()
     {
-        bool resultado = Physics.Raycast(transform.position, Vector3.down, 2f);
+        bool resultado = Physics.Raycast(transform.position, Vector3.down, 0.3f);
         return resultado;
     }
 }
