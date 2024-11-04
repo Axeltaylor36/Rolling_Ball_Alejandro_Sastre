@@ -22,12 +22,12 @@ public class Personaje : MonoBehaviour
     void Update()
     {
         Movimiento();
-        
+
         if (DetectarSuelo() == true)
         {
             salto();
         }
-            
+
     }
 
     void Movimiento()
@@ -35,20 +35,22 @@ public class Personaje : MonoBehaviour
         float movimientoHorizontal = Input.GetAxis("Horizontal");
         float movimientoVertical = Input.GetAxis("Vertical");
 
-        Vector3 movimiento = new Vector3(movimientoHorizontal , 0.0f, movimientoVertical);
-        rbd.AddForce( movimiento * velocidad);
+        Vector3 movimiento = new Vector3(movimientoHorizontal, 0.0f, movimientoVertical);
+        rbd.AddForce(movimiento * velocidad);
     }
 
     void salto()
     {
-        if (Input.GetKeyDown (KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            rbd.AddForce(Vector3.up * fuerzaSalto , ForceMode.Impulse);
+            rbd.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
         }
-    } 
+    }
     bool DetectarSuelo()
     {
         bool resultado = Physics.Raycast(transform.position, Vector3.down, 0.3f);
         return resultado;
     }
 }
+
+ 
