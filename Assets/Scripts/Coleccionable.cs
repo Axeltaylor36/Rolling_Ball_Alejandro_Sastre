@@ -47,5 +47,4 @@ public class Coleccionable : MonoBehaviour
         Destroy(gameObject);
     }
 
-
 }
