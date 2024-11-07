@@ -8,7 +8,7 @@ public class Personaje : MonoBehaviour
     [SerializeField] private float velocidad, fuerzaSalto;
     Vector3 posInicial;
     [SerializeField] Vector3 moverseW1, moverseS2, moverseA3, moverseD4;
-
+    Vector3 movimiento;
 
     // Start is called before the first frame update
     void Start()
@@ -29,14 +29,18 @@ public class Personaje : MonoBehaviour
         }
 
     }
+    private void FixedUpdate()
+    {
+        rbd.AddForce(movimiento * velocidad);
+    }
 
     void Movimiento()
     {
         float movimientoHorizontal = Input.GetAxis("Horizontal");
         float movimientoVertical = Input.GetAxis("Vertical");
 
-        Vector3 movimiento = new Vector3(movimientoHorizontal, 0.0f, movimientoVertical);
-        rbd.AddForce(movimiento * velocidad);
+        movimiento = new Vector3(movimientoHorizontal, 0.0f, movimientoVertical);
+        
     }
 
     void salto()
