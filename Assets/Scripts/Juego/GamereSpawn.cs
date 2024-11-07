@@ -6,11 +6,12 @@ public class Gamerespawn : MonoBehaviour
 {
     [SerializeField] private float treshold;
     private Rigidbody rb;
+    private int PuntosRestar = 1;
     // Start is called before the first frame update
     void Start()
     {
 
-        rb= GetComponent<Rigidbody>();  
+      
 
         rb = GetComponent<Rigidbody>();
 
@@ -29,6 +30,7 @@ public class Gamerespawn : MonoBehaviour
             rb.isKinematic = true;
             rb.velocity = Vector3.zero;
             rb.isKinematic = false;
+            GameManager.Instance.RestarPuntos(PuntosRestar);
         }
     }
 }

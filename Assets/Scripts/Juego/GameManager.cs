@@ -27,13 +27,21 @@ public class GameManager : MonoBehaviour
 
     public void RestarPuntos(int cantidad)
     {
-        puntos -= cantidad;
-        ActualizarUI(); 
+        if (puntos >= 1)
+        {
+            puntos -= cantidad;
+            ActualizarUI();
+        }
     }
 
     private void ActualizarUI()
     {
+        if (puntos < 0)
+        {
+            puntos  = 0;    
+        }
         Txtpuntos.text = puntos.ToString();
+
     }
 
     public void ReiniciarPuntos()
